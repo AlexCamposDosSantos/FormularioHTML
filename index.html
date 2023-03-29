@@ -29,7 +29,7 @@
                 <span>CPF</span>
                 <i></i>
             </div>
-            <button type="submit" value="Enviar" id="btn1">Enviar</button>
+            <button type="submit" class="submit" value="Enviar" id="btn1">Enviar</button>
         </form>
         <script>
             const form = document.querySelector('#myForm')
@@ -38,13 +38,15 @@
                 event.preventDefault();
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
-                const assunto = document.getElementById('cpf').value;
+                const cpf = document.getElementById('cpf').value;
 
                 if (name.length === '') {
                     alert('Informe o campo nome')
                 } else {
                     // enviar o formulário
                     localStorage.setItem('name', name)
+                    localStorage.setItem('email', email)
+                    localStorage.setItem('cpf', cpf)
                     window.location.href = 'resultado.html'
                 }
             })

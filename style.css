@@ -186,7 +186,7 @@ body {
     color: #fff;
 }
 
-.box form input[type="submit"] {
+.submit {
     border: none;
     outline: none;
     padding: 9px 25px;
@@ -199,7 +199,7 @@ body {
     margin-top: 10px;
 }
 
-.box form input[type="submit"]:active {
+.submit:active {
     opacity: 0.8;
 }
 
