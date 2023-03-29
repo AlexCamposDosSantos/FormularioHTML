@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box">
+        <span class="borderline"></span>
+        <form id="myForm" class="inputBox">
+            <h2>Formulário Javascript</h2>
+            <div class="inputBox">
+                <input type="text" id="name" required="required" maxleght="100">
+                <span>Nome</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="email" id="email" required="required" maxleght="100">
+                <span>Email</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="cpf" id="cpf" required="required" maxleght="100">
+                <span>CPF</span>
+                <i></i>
+            </div>
+            <button type="submit" value="Enviar" id="btn1">Enviar</button>
+        </form>
+        <script>
+            const form = document.querySelector('#myForm')
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const assunto = document.getElementById('cpf').value;
+
+                if (name.length === '') {
+                    alert('Informe o campo nome')
+                } else {
+                    // enviar o formulário
+                    localStorage.setItem('name', name)
+                    window.location.href = 'resultado.html'
+                }
+            })
+        </script>
+</body>
+
+</html>

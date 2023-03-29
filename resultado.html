@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Resultado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <span class="borderline"></span>
+    <form>
+      <h2 style="margin-bottom: 100px;">Resultado:</h2>
+      <p class="p">Nome: <span id="name"></span></p>
+      <p class="p">E-mail: <span id="email"></span></p>
+      <p class="p">CPF: <span id="cpf"></span></p>
+  </div>
+  </form>
+  <script>
+    document.getElementById('name').textContent = localStorage.getItem('name')
+  </script>
+</body>
+</html>
