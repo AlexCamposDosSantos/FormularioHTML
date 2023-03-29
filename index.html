@@ -14,6 +14,7 @@
         <span class="borderline"></span>
         <form id="myForm" class="inputBox">
             <h2>Formulário Javascript</h2>
+            <div id="mensagemErro"></div>
             <div class="inputBox">
                 <input type="text" id="name" required="required" maxleght="100">
                 <span>Nome</span>
@@ -22,6 +23,7 @@
             <div class="inputBox">
                 <input type="email" id="email" required="required" maxleght="100">
                 <span>Email</span>
+
                 <i></i>
             </div>
             <div class="inputBox">
@@ -30,7 +32,11 @@
                 <i></i>
             </div>
             <button type="submit" class="submit" value="Enviar" id="btn1">Enviar</button>
+            <div id="mensagemErro"></div>
         </form>
+
+
+
         <script>
             const form = document.querySelector('#myForm')
 
@@ -50,6 +56,18 @@
                     window.location.href = 'resultado.html'
                 }
             })
+
+            document.getElementById("btn1").addEventListener("click", function (event) {
+                var nomeX = document.forms["myForm"]["name"].value;
+                var emailX = document.forms["myForm"]["email"].value;
+                var mensagemErro = document.getElementById("mensagemErro");
+                if (nomeX == "" || emailX == "") {
+                    mensagemErro.innerHTML = "Por favor, preencha todos os campos.";
+                    event.preventDefault();
+                } else {
+                    mensagemErro.innerHTML = "";
+                }
+            });
         </script>
 </body>
 
